@@ -2,6 +2,7 @@ package racingcar;
 
 import camp.nextstep.edu.missionutils.test.NsTest;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
 
 import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
 import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
@@ -28,6 +29,29 @@ class ApplicationTest extends NsTest {
         assertSimpleTest(() ->
             assertThatThrownBy(() -> runException("pobi,javaji", "1"))
                 .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
+    @Test
+    @DisplayName("빈 토큰(연속 쉼표)은 예외")
+    void 빈토큰_예외() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("pobi,,jun", "1"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
+
+    @Test
+    @DisplayName("이름 앞뒤 공백은 trim 처리 후 검증")
+    void 이름_trim_검증() {
+        assertRandomNumberInRangeTest(
+                () -> {
+                    run(" pobi , woni ", "1");
+                    assertThat(output()).contains("pobi :");
+                    assertThat(output()).contains("woni :");
+                },
+                MOVING_FORWARD, STOP
         );
     }
 
