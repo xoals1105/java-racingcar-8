@@ -43,5 +43,5 @@
 
 - [ ] 난수는 `camp.nextstep.edu.missionutils.Randoms#pickNumberInRange(0, 9)` 를 사용한다.
 - [ ] 입력은 `camp.nextstep.edu.missionutils.Console#readLine()` 을 사용한다.
-- [ ] 프로그램 시작점은 `Application.main()` 이어야 한다.
+- [x] 프로그램 시작점은 `Application.main()` 이어야 한다.
 - [ ] `build.gradle` 변경 금지, 제공 외 외부 라이브러리 금지, 파일/패키지명 변경 금지(명시된 한도 내).
