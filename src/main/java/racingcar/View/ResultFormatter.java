@@ -11,8 +11,8 @@ public final class ResultFormatter {
     public static String formatRound(Cars cars) {
         return cars.asList().stream()
                 .map(ResultFormatter::formatOne)
-                .collect(Collectors.joining(System.lineSeparator()))
-                .trim();
+                .collect(Collectors.joining(System.lineSeparator()));
+
     }
 
 
