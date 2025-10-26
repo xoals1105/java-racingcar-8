@@ -55,6 +55,36 @@ class ApplicationTest extends NsTest {
         );
     }
 
+    @Test
+    @DisplayName("시도 횟수 0/음수/숫자아님은 예외")
+    void 시도횟수_예외() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("pobi,jun", "0"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("pobi,jun", "-2"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("pobi,jun", "abc"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
+    @Test
+    @DisplayName("경계값: 3은 정지, 4는 전진")
+    void 경계값_테스트() {
+        assertRandomNumberInRangeTest(
+                () -> {
+                    run("a", "2");
+                    assertThat(output()).contains("a : "); // 1라운드(3): 정지
+                    assertThat(output()).contains("a : -"); // 2라운드(4): 전진
+                },
+                STOP, MOVING_FORWARD
+        );
+    }
+
     @Override
     public void runMain() {
         Application.main(new String[]{});
