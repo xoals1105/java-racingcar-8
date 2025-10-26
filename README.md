@@ -15,8 +15,8 @@
 
 ### 경주 규칙
 
-- [ ] 매 라운드 각 자동차에 대해 0~9 정수 난수 1개를 생성한다.
-- [ ] 난수 ≥ 4 이면 전진 ≤ 3 이면 정지한다.
+- [x] 매 라운드 각 자동차에 대해 0~9 정수 난수 1개를 생성한다.
+- [x] 난수 ≥ 4 이면 전진 ≤ 3 이면 정지한다.
 - [ ] 사용자 입력 시도 횟수 만큼 라운드를 반복한다.
 
 ---
@@ -41,7 +41,7 @@
 
 ### 구현 제약
 
-- [ ] 난수는 `camp.nextstep.edu.missionutils.Randoms#pickNumberInRange(0, 9)` 를 사용한다.
+- [x] 난수는 `camp.nextstep.edu.missionutils.Randoms#pickNumberInRange(0, 9)` 를 사용한다.
 - [ ] 입력은 `camp.nextstep.edu.missionutils.Console#readLine()` 을 사용한다.
 - [x] 프로그램 시작점은 `Application.main()` 이어야 한다.
 - [ ] `build.gradle` 변경 금지, 제공 외 외부 라이브러리 금지, 파일/패키지명 변경 금지(명시된 한도 내).
