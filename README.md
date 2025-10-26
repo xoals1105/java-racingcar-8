@@ -5,9 +5,9 @@
 
 - [ ] 자동차 이름은 쉼표(,) 로 구분하여 입력받는다.
 - [ ] 각 자동차 이름은 1~5자여야 한다.
-- [ ] 이름 토큰의 앞뒤 공백을 `trim` 처리한다.
-- [ ] 빈 토큰(예: `pobi,,jun`) 은 허용하지 않는다 → `IllegalArgumentException`.
-- [ ] 중복 이름을 허용하지 않는다 → `IllegalArgumentException`.
+- [x] 이름 토큰의 앞뒤 공백을 `trim` 처리한다.
+- [x] 빈 토큰(예: `pobi,,jun`) 은 허용하지 않는다 → `IllegalArgumentException`.
+- [x] 중복 이름을 허용하지 않는다 → `IllegalArgumentException`.
 - [ ] 시도 횟수는 양의 정수만 입력받는다(0, 음수, 숫자 아님 → 예외).
 - [ ] 입력 프롬프트 문구를 과제 예시와 동일하게 출력한다.
 
