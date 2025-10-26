@@ -1,0 +1,4 @@
+package racingcar.model;
+public interface MoveStrategy {
+    boolean movable(int number);
+}
